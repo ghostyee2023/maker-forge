@@ -1,0 +1,6 @@
+interface:
+  display_name: "造物工坊"
+  short_description: "用200个产品案例把模糊想法锻造成可验证的3小时MVP"
+  default_prompt: "Use $maker-forge to evaluate this product idea against similar cases and design a 3-hour MVP."
+policy:
+  allow_implicit_invocation: true
