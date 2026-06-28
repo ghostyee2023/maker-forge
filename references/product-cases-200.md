@@ -1,11 +1,4 @@
----
-title: "产品案例预习资料：200个产品案例"
-source: "https://duomiyang.feishu.cn/docx/UVJudej2QoRovTxrsrVcQvcundh"
-date: "2026-06-27"
-type: "飞书文档提取"
-document_id: "UVJudej2QoRovTxrsrVcQvcundh"
-revision_id: 321
----
+
 # 产品案例预习资料：200 个产品案例
 
 <callout emoji="🎯">
