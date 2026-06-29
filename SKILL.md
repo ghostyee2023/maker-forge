@@ -1,6 +1,6 @@
 ---
 name: maker-forge
-description: "Use OPC's 200-case product library to evaluate product ideas, identify real demand, find analogous success and failure cases, rewrite vague ideas into demand statements, and design a 3-hour Codex MVP. Use when users ask about product ideas, MVP planning, 真需求/伪需求判断, 案例类比, workshop training exercises, 客户方案机会判断, or comparing a business/workflow idea against product cases."
+description: "Use the bundled 200-case product library to evaluate product ideas, identify real demand, find analogous success and failure cases, rewrite vague ideas into demand statements, and design a 3-hour Codex MVP. Use when users ask about product ideas, MVP planning, 真需求/伪需求判断, 案例类比, workshop training exercises, customer opportunity diagnosis, or comparing a business/workflow idea against product cases."
 ---
 
 # 造物工坊 Maker Forge
@@ -31,7 +31,7 @@ Use the map first:
 Use the local script when you need candidate cases quickly:
 
 ```bash
-python "11_能力与Agent/03_项目级skill/maker-forge/scripts/case_search.py" "培训 课程 SaaS" --root . --limit 5 --failure-limit 3
+python scripts/case_search.py "培训 课程 SaaS" --limit 5 --failure-limit 3
 ```
 
 If the script returns weak matches, search the corpus manually with `rg` and use judgment. Chinese product ideas often require semantic bridging, not literal keyword matching.
@@ -125,10 +125,10 @@ Before upgrading the skill, update the checklist first, then implement one phase
 
 - Do not write product strategy artifacts unless the user asks to save,落地,生成文件, or做方案.
 - Do not copy the full 200-case corpus into `SKILL.md`.
-- Do not treat Starter Story or Failory case metadata as independently verified financial truth. Attribute outputs to the source corpus.
-- Do not expose raw source-event names, private collection labels, or original internal file names in user-facing answers. Use the sanitized corpus name `product-cases-200.md`.
-- Do not expose internal OPC paths in customer-facing exports unless the artifact is explicitly internal.
-- If using this for a client knowledge-base product, hand off to `kb-foundry` after the opportunity and MVP shape are clear.
+- Do not treat revenue, funding, team size, or failure labels as independently verified financial truth. Attribute outputs to the source corpus.
+- Do not expose raw collection labels, extraction metadata, or original internal file names in user-facing answers. Use the sanitized corpus name `product-cases-200.md`.
+- Do not expose local machine paths or private workspace paths in customer-facing exports unless the artifact is explicitly internal.
+- If using this for a client knowledge-base product, switch to the client's approved delivery workflow after the opportunity and MVP shape are clear.
 
 ## References
 

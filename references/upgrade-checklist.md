@@ -4,7 +4,7 @@ Update this checklist before changing the skill. Move one phase at a time.
 
 ## v0.1 Lite Baseline
 
-- [x] Create project-level skill folder under `11_能力与Agent/03_项目级skill/maker-forge/`.
+- [x] Create the `maker-forge/` skill folder.
 - [x] Keep `SKILL.md` lightweight and workflow-oriented.
 - [x] Record source corpus location.
 - [x] Record lightweight plan.
@@ -50,8 +50,8 @@ Update this checklist before changing the skill. Move one phase at a time.
 
 - [ ] Decide whether to keep as project skill, sync to global skill, or turn into a local app.
 - [ ] Add semantic or hybrid retrieval if lexical search remains weak.
-- [ ] Add saved analysis records under the appropriate OPC business flow.
-- [ ] Register or update the capability in `能力开关表.md` after enough real usage evidence.
+- [ ] Add saved analysis records under the appropriate project workflow or knowledge base.
+- [ ] Register or update the capability in the host project's capability registry after enough real usage evidence.
 - [ ] Create a customer-facing export mode if used in paid delivery.
 - [ ] Create retirement criteria if the skill becomes redundant with another product opportunity engine.
 

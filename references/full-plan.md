@@ -38,11 +38,10 @@ The full version turns the case library into a product opportunity operating sys
    hide result, ask learners to identify demand, risk, wedge, MVP; reveal case outcome and lesson.
 
 7. Customer-plan adapter
-   Convert product opportunity analysis into customer-facing diagnosis, proposal, and implementation plan. Hand off to `kb-foundry` when this becomes a client knowledge-base or operating-system delivery.
+   Convert product opportunity analysis into customer-facing diagnosis, proposal, and implementation plan. Hand off to the user's approved delivery workflow when this becomes a client knowledge-base or operating-system delivery.
 
 8. Evidence and feedback loop
-   Store tested ideas, interview notes, MVP outcomes, and post-test lessons back into OPC:
-   `04_选题决策/`, `06_产品交付/`, `08_数据反馈/`, or `03_知识沉淀/` depending on use.
+   Store tested ideas, interview notes, MVP outcomes, and post-test lessons back into the user's chosen project records or knowledge base.
 
 ## Suggested Architecture
 

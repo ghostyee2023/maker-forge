@@ -10,7 +10,7 @@ Total: 200 cases
 
 - Success: 160
 - Failure: 40
-- Source hosts: Starter Story cases dominate success examples; Failory dominates failure examples.
+- Public source links are retained at the individual case level for attribution.
 
 Each case usually contains:
 

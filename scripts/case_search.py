@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Search the OPC 200-case product library.
+"""Search the bundled 200-case product library.
 
 This is a lightweight lexical retriever. It is meant to shortlist candidate
 cases for an agent, not to replace semantic judgment.
@@ -15,9 +15,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-DEFAULT_SOURCE = Path(
-    "11_能力与Agent/03_项目级skill/maker-forge/references/product-cases-200.md"
-)
+DEFAULT_SOURCE = Path(__file__).resolve().parents[1] / "references" / "product-cases-200.md"
 
 
 @dataclass
@@ -144,10 +142,10 @@ def print_markdown(title: str, ranked: list[tuple[int, Case]], limit: int) -> No
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Search OPC product case corpus.")
+    parser = argparse.ArgumentParser(description="Search the product case corpus.")
     parser.add_argument("query", nargs="?", default="", help="Search query, e.g. '培训 课程 SaaS'")
-    parser.add_argument("--root", default=".", help="OPC root directory")
-    parser.add_argument("--source", default=str(DEFAULT_SOURCE), help="Case library path relative to root")
+    parser.add_argument("--root", default=".", help="Base directory for relative --source paths")
+    parser.add_argument("--source", default=str(DEFAULT_SOURCE), help="Case library path")
     parser.add_argument("--type", default=None, help="Filter by text in type, e.g. success, failure, SaaS")
     parser.add_argument("--limit", type=int, default=5, help="Number of success/general matches")
     parser.add_argument("--failure-limit", type=int, default=3, help="Number of failure matches")
@@ -155,7 +153,8 @@ def main() -> int:
     args = parser.parse_args()
 
     sys.stdout.reconfigure(encoding="utf-8")
-    source = Path(args.root) / args.source
+    source_arg = Path(args.source)
+    source = source_arg if source_arg.is_absolute() else Path(args.root) / source_arg
     if not source.exists():
         print(f"Source not found: {source}", file=sys.stderr)
         return 2
@@ -170,7 +169,7 @@ def main() -> int:
     if args.format == "json":
         payload = {
             "query": args.query,
-            "source": str(source),
+            "source": source.name,
             "total_cases": len(cases),
             "matches": [case_to_brief(case, score) for score, case in ranked[: args.limit]],
             "failure_counterexamples": [
